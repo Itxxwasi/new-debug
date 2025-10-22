@@ -1,0 +1,52 @@
+{
+  "name": "dwatson-pharmacy-dashboard",
+  "description": "D.Watson Pharmacy Sales Dashboard - Full-stack application with Express.js backend and vanilla JavaScript frontend",
+  "repository": "https://github.com/yourusername/dwatson-pharmacy-dashboard",
+  "logo": "https://via.placeholder.com/150x150/2c6e8a/ffffff?text=D.Watson",
+  "keywords": [
+    "pharmacy",
+    "sales-dashboard",
+    "express",
+    "mongodb",
+    "nodejs",
+    "dashboard",
+    "inventory"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "env": {
+    "NODE_ENV": {
+      "description": "Node.js environment",
+      "value": "production"
+    },
+    "MONGODB_URI": {
+      "description": "MongoDB Atlas connection string",
+      "value": "mongodb+srv://onlydevsx_db_user:aN0cWgqkOWo4rhiD@cluster0.jfuzynl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+    },
+    "JWT_SECRET": {
+      "description": "JWT secret key for authentication",
+      "generator": "secret"
+    },
+    "ADMIN_PASSWORD": {
+      "description": "Admin password for system administration",
+      "value": "admin123"
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-postgresql:mini"
+    }
+  ],
+  "scripts": {
+    "postdeploy": "echo '✅ D.Watson Pharmacy Dashboard deployed successfully on Heroku!'"
+  }
+}
